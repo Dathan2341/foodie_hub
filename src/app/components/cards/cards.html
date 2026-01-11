@@ -1,0 +1,34 @@
+  <div class="rowsss">
+   @for (item of recipes; track item.id) {
+  
+    <div class="card"> 
+  <img src="{{item.image}}" class="card-img-top" alt="...">
+  <div class="card-body">
+<h5 class="card-title">{{item.name}}</h5>
+
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+       Ingredients
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+      <div class="accordion-body">
+        {{item.ingredients}}
+      </div>
+    </div>
+  </div>
+</div>
+
+  <h6>PrepTime={{item.prepTimeMinutes}}</h6>
+  <h6>CookTime={{item.cookTimeMinutes}}</h6>
+
+  <button class="btn btn-primary btn-sm" (click)="viewRecipe(item)">See More</button>
+  
+  </div>
+</div>
+  }
+</div>
+
+
